@@ -3,7 +3,7 @@ const cards = document.querySelectorAll('.work-section > .project-grid .project-
 filters.forEach(button => button.addEventListener('click', () => {
   const filter = button.dataset.filter;
   filters.forEach(item => { item.classList.toggle('active', item === button); item.setAttribute('aria-pressed', String(item === button)); });
-  cards.forEach(card => { card.hidden = filter !== 'all' && card.dataset.category !== filter; });
+  cards.forEach(card => { card.hidden = filter !== 'all' && !card.dataset.category.split(' ').includes(filter); });
 }));
 
 const dialog = document.querySelector('#video-dialog');
