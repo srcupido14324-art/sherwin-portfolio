@@ -1,5 +1,5 @@
 const filters = document.querySelectorAll('.filter');
-const cards = document.querySelectorAll('.project-card');
+const cards = document.querySelectorAll('.work-section > .project-grid .project-card');
 filters.forEach(button => button.addEventListener('click', () => {
   const filter = button.dataset.filter;
   filters.forEach(item => { item.classList.toggle('active', item === button); item.setAttribute('aria-pressed', String(item === button)); });
